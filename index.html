@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Prime Battle</title>
+    <title>Terms & Conditions | Prime Battle</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="shortcut icon" href="icon.png" type="image/x-icon">
 
     <style>
-        /* --- CSS VARIABLES & THEME --- */
         :root {
             --bg-main: #0a0a0a;
             --bg-card: #141414;
-            --bg-card-hover: #1f1f1f;
             --accent-red: #ff2a2a;
             --accent-red-hover: #d61c1c;
             --text-main: #ffffff;
@@ -34,11 +34,16 @@
         body {
             background-color: var(--bg-main);
             color: var(--text-main);
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
+            user-select: none;
+            -webkit-user-select: none;
         }
 
-        h1, h2, h3, .logo-text {
+        h1,
+        h2,
+        h3,
+        .logo-text {
             font-family: 'Orbitron', sans-serif;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -71,9 +76,19 @@
             color: var(--text-main);
         }
 
-        .logo-img { height: 40px; width: 40px; }
-        .logo-text { font-size: 1.5rem; font-weight: 900; }
-        .logo-text span { color: var(--accent-red); }
+        .logo-img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+
+        .logo-text span {
+            color: var(--accent-red);
+        }
 
         .nav-links {
             display: flex;
@@ -89,8 +104,106 @@
             transition: color 0.3s ease;
         }
 
-        .nav-links a:hover, .nav-links a.active { color: var(--accent-red); }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-red);
+        }
 
+        /* --- TERMS CONTAINER --- */
+        .terms-container {
+            max-width: 900px;
+            margin: 3rem auto 5rem;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h1 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent-red);
+            box-shadow: 0 0 10px var(--accent-red);
+        }
+
+        .terms-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .terms-card h2 {
+            font-size: 1.4rem;
+            color: var(--accent-red);
+            margin: 2rem 0 0.8rem;
+        }
+
+        .terms-card h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .terms-card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .terms-card ul {
+            margin-left: 1.5rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .terms-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #050505;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-social-links a {
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social-links a:hover {
+            color: var(--accent-red);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        /* --- HAMBURGER MENU STYLES --- */
         .hamburger {
             display: none;
             font-size: 1.8rem;
@@ -100,180 +213,18 @@
             transition: color 0.3s ease;
         }
 
-        /* --- PAGE HEADER --- */
-        .page-header {
-            text-align: center;
-            padding: 4rem 2rem 2rem;
-            background: linear-gradient(180deg, rgba(255,42,42,0.1) 0%, var(--bg-main) 100%);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .page-header h1 {
-            font-size: 3rem;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
-        }
-
-        .page-header p {
-            color: var(--accent-red);
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        /* --- CONTACT SECTION --- */
-        .contact-container {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 3rem;
-        }
-
-        .contact-info-box {
-            background: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .contact-info-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+        .hamburger:hover {
             color: var(--accent-red);
         }
 
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .info-icon {
-            font-size: 1.5rem;
-            color: var(--accent-red);
-            background: rgba(255, 42, 42, 0.1);
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
-
-        .info-text h4 {
-            font-size: 1.2rem;
-            color: var(--text-main);
-            margin-bottom: 0.3rem;
-        }
-
-        .info-text p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
-
-        /* --- CONTACT FORM --- */
-        .contact-form-box {
-            background: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-muted);
-            font-weight: 600;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 1rem;
-            background: var(--bg-main);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent-red);
-            box-shadow: 0 0 10px rgba(255, 42, 42, 0.2);
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: var(--accent-red);
-            color: var(--text-main);
-            padding: 1rem 2rem;
-            border-radius: 6px;
-            border: none;
-            font-weight: 700;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.1rem;
-            cursor: pointer;
-            width: 100%;
-            box-shadow: 0 0 15px var(--glow-red);
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background: var(--accent-red-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 0 25px rgba(255, 42, 42, 0.6);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: #050505;
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 2rem 1rem;
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-links a {
-            color: var(--text-muted);
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover { color: var(--accent-red); }
-        .footer-text { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
-        .footer-subtext { color: #666; font-size: 0.8rem; }
-
-        /* --- MOBILE RESPONSIVE FIXES --- */
         @media (max-width: 768px) {
-            .hamburger { display: block; }
+            .hamburger {
+                display: block;
+            }
 
             .nav-links {
                 display: none;
+                /* Pehle se chhupa rahega */
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -291,23 +242,30 @@
                 animation: slideDown 0.3s ease-in-out forwards;
             }
 
-            .nav-links.active { display: flex; }
-            .nav-links a { font-size: 1.2rem; width: 100%; text-align: center; padding: 0.5rem 0; }
-
-            .contact-container {
-                grid-template-columns: 1fr; /* Mobile me ek ke niche ek aayega */
-                gap: 2rem;
-                padding: 0 1rem;
+            /* Menu open hone par dikhai dega */
+            .nav-links.active {
+                display: flex;
             }
 
-            .page-header h1 {
-                font-size: 2.2rem;
+            .nav-links a {
+                font-size: 1.2rem;
+                width: 100%;
+                text-align: center;
+                padding: 0.5rem 0;
             }
         }
 
+        /* Smooth Drop Animation */
         @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -320,113 +278,122 @@
                 <img src="icon.png" alt="logo" class="logo-img">
                 <span class="logo-text">PRIME <span>BATTLE</span></span>
             </a>
-
+    
             <div class="hamburger" id="hamburger">
                 <i class="fa-solid fa-bars"></i>
             </div>
-
+    
             <ul class="nav-links" id="nav-links">
-                <li><a href="primebattle.github.io/#home">Home</a></li>
-                <li><a href="primebattle.github.io/#about">About</a></li>
-                <li><a href="primebattle.github.io/#interface">App Screens</a></li>
-                <li><a href="primebattle.github.io/#download">Download</a></li>
-                <li><a href="primebattle.github.io/contect" class="active">Contact</a></li>
-                <li><a href="primebattle.github.io/terms">Terms</a></li>
+                <li><a href="primbattle.github.io/#home">Home</a></li>
+                <li><a href="primbattle.github.io/#about">About</a></li>
+                <li><a href="primbattle.github.io/#interface">App Screens</a></li>
+                <li><a href="primbattle.github.io/#download">Download</a></li>
+                <li><a href="primbattle.github.io/contect">Contact</a></li>
+                <li><a href="primbattle.github.io/terms">Terms</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="page-header">
-        <h1>Contact Us</h1>
-        <p>We're here to help you 24/7</p>
-    </div>
-
-    <section class="contact-container">
-        <div class="contact-info-box">
-            <h3>Get In Touch</h3>
-            
-            <div class="info-item">
-                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-                <div class="info-text">
-                    <h4>Location</h4>
-                    <p>Prime Battle Headquarters, New Delhi, India</p>
-                </div>
-            </div>
-
-            <div class="info-item">
-                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
-                <div class="info-text">
-                    <h4>Email Support</h4>
-                    <p>support@primebattle.com</p>
-                </div>
-            </div>
-
-            <div class="info-item">
-                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
-                <div class="info-text">
-                    <h4>Call Us</h4>
-                    <p>+91 98765 43210</p>
-                </div>
-            </div>
-
-            <div class="info-item">
-                <div class="info-icon"><i class="fa-brands fa-discord"></i></div>
-                <div class="info-text">
-                    <h4>Discord Community</h4>
-                    <p>Join our server for fast replies</p>
-                </div>
-            </div>
+    <main class="terms-container">
+        <div class="section-header animate-on-scroll">
+            <h1>TERMS & CONDITIONS</h1>
         </div>
 
-        <div class="contact-form-box">
-            <form id="contactForm" onsubmit="return false;">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
-                </div>
+        <div class="terms-card animate-on-scroll">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By downloading, accessing, or using Prime Battle, you agree to comply with and be bound by these Terms
+                and Conditions. If you do not agree to these terms, please do not use our app or platform services.</p>
 
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" class="form-control" placeholder="What is this regarding?" required>
-                </div>
+            <h2>2. Fair Play Policy</h2>
+            <p>Prime Battle is built purely for skill-based esports tournaments. We maintain a zero-tolerance policy
+                against cheating, hacking, or exploiting bugs.</p>
+            <ul>
+                <li>Use of third-party hacks, modded APKs, or scripts leads to an instant ban.</li>
+                <li>Teaming up with opponent players in solo/duo matches will result in permanent suspension and
+                    forfeiture of rewards.</li>
+            </ul>
 
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" class="form-control" placeholder="Write your message here..." required></textarea>
-                </div>
+            <h2>3. Account Security & Eligibility</h2>
+            <p>Users must register with legitimate details. You are responsible for maintaining the confidentiality of
+                your account password and activity.</p>
+            <ul>
+                <li>Must be at least 18 years old or have parental consent to participate in cash tournaments.</li>
+                <li>Only one account per user/device is permitted.</li>
+            </ul>
 
-                <button type="submit" class="btn" onclick="alert('Message Sent Successfully! We will contact you soon.')">
-                    <i class="fa-solid fa-paper-plane"></i> SEND MESSAGE
-                </button>
-            </form>
+            <h2>4. Payments and Withdrawals</h2>
+            <p>All in-game earnings can be withdrawn via UPI, Paytm, or gift card redemptions.</p>
+            <ul>
+                <li>Withdrawal requests are processed 24/7.</li>
+                <li>Prime Battle reserves the right to verify user identity (KYC) prior to disbursing large winnings.
+                </li>
+                <li>Any fraudulent transaction attempts will lead to legal action and account termination.</li>
+            </ul>
+
+            <h2>5. Platform Ownership</h2>
+            <p>All trademarks, logos, app interfaces, graphics, and code belong exclusively to Prime Battle.
+                Unauthorized reproduction or reverse engineering is prohibited.</p>
+
+            <h2>6. Changes to Terms</h2>
+            <p>Prime Battle reserves the right to modify these terms at any time. Continued use of the platform
+                constitutes your consent to the revised terms.</p>
         </div>
-    </section>
+    </main>
 
     <footer>
-        <div class="social-links">
+        <div class="footer-social-links animate-on-scroll">
             <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
             <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
             <a href="#" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
             <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://alikhafagyy.github.io" title="Website"><i class="fa-solid fa-globe"></i></a>
         </div>
         <p class="footer-text">© 2026 PRIME BATTLE. All Rights Reserved.</p>
-        <p class="footer-subtext">Download And Win real cash!</p>
     </footer>
 
     <script>
-        // Mobile Hamburger Menu Logic
+        document.addEventListener("DOMContentLoaded", function () {
+            const animatedElements = document.querySelectorAll(".animate-on-scroll");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            animatedElements.forEach(el => observer.observe(el));
+        });
+
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+        document.addEventListener('keydown', (e) => {
+            if (
+                e.keyCode === 123 ||
+                (e.ctrlKey && e.shiftKey && ['I', 'J', 'C'].includes(e.key)) ||
+                (e.ctrlKey && e.key === 'u')
+            ) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        });
         document.addEventListener("DOMContentLoaded", function () {
             const hamburger = document.getElementById("hamburger");
             const navLinks = document.getElementById("nav-links");
             const navItems = document.querySelectorAll(".nav-links a");
 
             if (hamburger && navLinks) {
+                // Initial state clear
+                navLinks.classList.remove("active");
+
                 hamburger.addEventListener("click", function () {
                     navLinks.classList.toggle("active");
 
@@ -439,11 +406,20 @@
                         icon.classList.add("fa-bars");
                     }
                 });
+
+                navItems.forEach(item => {
+                    item.addEventListener("click", () => {
+                        navLinks.classList.remove("active");
+                        const icon = hamburger.querySelector("i");
+                        if (icon) {
+                            icon.classList.remove("fa-xmark");
+                            icon.classList.add("fa-bars");
+                        }
+                    });
+                });
             }
         });
-
-        // Protection against dev tools (Optional)
-        document.addEventListener('contextmenu', (e) => e.preventDefault());
     </script>
 </body>
+
 </html>
